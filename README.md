@@ -1,4 +1,4 @@
-# Dulie website
+# Dulie Landing Page
 
 The public landing page for Dulie, built with React and Vite.
 
