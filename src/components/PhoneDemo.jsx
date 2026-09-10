@@ -8,6 +8,10 @@ export function PhoneDemo() {
       aria-label="Telegram conversation with Dulie"
     >
       <div className="demo-glow" data-parallax="-0.04" />
+      <div className="phone-orbit" aria-hidden="true" />
+      <span className="phone-caption" aria-hidden="true">
+        A SMALL CONVERSATION. A LIGHTER DAY.
+      </span>
       <div className="phone" data-parallax="-0.018" aria-hidden="true">
         <div className="phone__topbar">
           <span className="phone__time">9:41</span>
@@ -33,12 +37,15 @@ export function PhoneDemo() {
           <div className="chat-thread">
             <div className="chat-exchange">
               <div className="bubble bubble--outgoing">
-                <span className="bubble__text">event gym tmr 7-8</span>
+                <span className="bubble__text">event gym tmr 7-8pm</span>
                 <span className="bubble__meta">9:37 ✓✓</span>
               </div>
               <div className="bubble bubble--incoming">
                 <span className="bubble__text">
-                  Added <strong>Gym</strong> · tomorrow, 7–8 PM.
+                  <span className="chat-confirm">✓ Event saved</span>
+                  <strong>Gym</strong>
+                  <br />
+                  Tomorrow · 7–8 PM
                 </span>
                 <span className="bubble__meta">9:37</span>
               </div>
@@ -82,10 +89,14 @@ export function PhoneDemo() {
       </div>
 
       <div className="floating-note floating-note--top">
-        <span className="status-dot" /> Three actions. Zero forms.
+        <span className="status-dot" /> @dulie_bot
       </div>
       <div className="floating-note floating-note--bottom">
-        <Calendar size={17} /> Google synced
+        <Calendar size={22} />
+        <div>
+          <strong>One less thing to remember.</strong>
+          <span>Saved in a few words.</span>
+        </div>
       </div>
     </div>
   );

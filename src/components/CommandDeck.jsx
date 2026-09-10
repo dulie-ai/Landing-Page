@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { commandGroups, detailedCapabilities } from "../content.js";
+import { commandGroups } from "../content.js";
 import { Check, Copy } from "./Icons.jsx";
 
 export function CommandDeck() {
@@ -27,16 +27,16 @@ export function CommandDeck() {
       <div className="container">
         <div className="commands__heading" data-reveal="left">
           <div>
-            <span className="kicker kicker--light">THE WHOLE PLAYBOOK</span>
+            <span className="kicker kicker--light">KEEP THIS HANDY</span>
             <h2>
-              Short messages.
+              Try a message.
               <br />
-              <em>Full control.</em>
+              <em>Make it yours.</em>
             </h2>
           </div>
           <p>
-            There is no command language to study. These patterns show how
-            little you need to type to reach every part of Dulie.
+            A few starting points for the things you’ll do most. Choose a
+            category and copy an example into Telegram.
           </p>
         </div>
 
@@ -104,39 +104,6 @@ export function CommandDeck() {
           <span className="sr-only" aria-live="polite">
             {copied ? `${copied} copied` : ""}
           </span>
-        </div>
-
-        <div className="capability-intro" data-reveal="up">
-          <span className="kicker kicker--light">MORE THAN CAPTURE</span>
-          <h3>The details that make it dependable.</h3>
-        </div>
-        <div className="capability-grid" data-reveal="up">
-          {detailedCapabilities.map(
-            ({ number, title, description, detail, tags, swatches }) => (
-              <article key={number}>
-                <div className="capability-card__top">
-                  <span>{number}</span>
-                  <small>{detail}</small>
-                </div>
-                <h4>{title}</h4>
-                <p>{description}</p>
-                {tags && (
-                  <div className="capability-card__tags" aria-hidden="true">
-                    {tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                )}
-                {swatches && (
-                  <div className="capability-card__swatches" aria-hidden="true">
-                    {swatches.map((color) => (
-                      <span key={color} style={{ backgroundColor: color }} />
-                    ))}
-                  </div>
-                )}
-              </article>
-            ),
-          )}
         </div>
       </div>
     </section>

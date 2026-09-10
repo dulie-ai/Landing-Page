@@ -13,7 +13,7 @@ test("renders the complete landing page", async ({ page }) => {
   await expect(
     page.getByLabel("Telegram conversation with Dulie"),
   ).toBeVisible();
-  await expect(page.locator("main section")).toHaveCount(8);
+  await expect(page.locator("main section")).toHaveCount(5);
   await expect(page.getByRole("contentinfo")).toBeAttached();
 });
 
@@ -48,14 +48,6 @@ test("has no serious accessibility violations", async ({ page }) => {
   expect(seriousViolations).toEqual([]);
 });
 
-test("switches between product examples", async ({ page }) => {
-  await page.goto("/");
-  await page.getByRole("tab", { name: "Reminder" }).click();
-  await expect(page.getByRole("tabpanel", { name: "Reminder" })).toContainText(
-    "Take meds",
-  );
-});
-
 test("shows multiple phrasings for the same event", async ({ page }) => {
   await page.goto("/");
   const alternatives = page.locator(".phrase-proof__examples code");
@@ -73,6 +65,23 @@ test("phone mockup shows a compact action history", async ({ page }) => {
   await expect(phone).toContainText("task buy milk");
   await expect(phone).toContainText("delete event gym");
   await expect(phone).toContainText("Undo");
+  const fits = await phone.locator(".chat-body").evaluate((body) => {
+    const bounds = body.getBoundingClientRect();
+    return [...body.querySelectorAll(".chat-exchange")].every((exchange) => {
+      const message = exchange.getBoundingClientRect();
+      return message.top >= bounds.top && message.bottom <= bounds.bottom;
+    });
+  });
+  expect(fits).toBe(true);
+});
+
+test("groups the benefits into three illustrated cards", async ({ page }) => {
+  await page.goto("/");
+  const core = page.locator("#how-it-works");
+  await expect(core.getByRole("heading", { level: 3 })).toHaveCount(3);
+  await expect(core).toContainText("morning brief");
+  await expect(core).toContainText("automatic event colors");
+  await expect(core).toContainText("ten-minute Undo");
 });
 
 test("shows every command category", async ({ page }) => {
@@ -96,21 +105,6 @@ test("shows every command category", async ({ page }) => {
   await expect(page.getByRole("tabpanel", { name: "Settings" })).toContainText(
     "/set_timezone Singapore",
   );
-});
-
-test("presents the development feature set", async ({ page }) => {
-  await page.goto("/");
-
-  await expect(page.locator(".capability-grid article")).toHaveCount(8);
-  await expect(
-    page.getByRole("heading", { name: "Color-coded automatically" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "An 8 AM morning brief" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Calendar and Tasks sync" }),
-  ).toBeVisible();
 });
 
 test("renders a level, visible marquee", async ({ page }) => {

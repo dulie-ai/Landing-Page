@@ -1,22 +1,15 @@
-import { useState } from "react";
-import { useCases } from "../content.js";
-import { Calendar, Check, Message, Undo } from "./Icons.jsx";
-
 export function ProductShowcase() {
-  const [activeId, setActiveId] = useState(useCases[0].id);
-  const active = useCases.find(({ id }) => id === activeId) ?? useCases[0];
-
   return (
     <section className="showcase section" id="product">
       <div className="container">
         <div className="showcase__heading" data-reveal="left">
           <div>
-            <span className="kicker">ONE CHAT, FOUR WAYS TO REMEMBER</span>
-            <h2>Whatever it is, just say it.</h2>
+            <span className="kicker">SAY IT YOUR WAY</span>
+            <h2>Your words. Same understanding.</h2>
           </div>
           <p>
-            Plans don’t always look the same. Dulie extracts the useful details
-            and keeps each thought in the right shape.
+            Use shorthand, change the order, or write a full sentence. Missing
+            something? Dulie asks a follow-up or offers a type picker.
           </p>
         </div>
 
@@ -36,7 +29,7 @@ export function ProductShowcase() {
               <i>01</i> event gym tmr 7-8
             </code>
             <code>
-              <i>02</i> gym tmr 7 to 8 — event
+              <i>02</i> gym tmr 7 to 8pm — event
             </code>
             <code>
               <i>03</i> add an event for gym tomorrow, 7pm for 1hr
@@ -47,80 +40,6 @@ export function ProductShowcase() {
             <strong>Gym</strong>
             <p>Tomorrow · 7–8 PM</p>
           </div>
-        </div>
-
-        <div className="showcase__stage" data-reveal="scale">
-          <div
-            className="showcase__tabs"
-            role="tablist"
-            aria-label="Dulie examples"
-          >
-            {useCases.map((item) => (
-              <button
-                className={item.id === active.id ? "is-active" : ""}
-                type="button"
-                role="tab"
-                id={`use-case-${item.id}`}
-                aria-selected={item.id === active.id}
-                aria-controls="use-case-panel"
-                key={item.id}
-                onClick={() => setActiveId(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <div
-            className="showcase__conversation"
-            id="use-case-panel"
-            role="tabpanel"
-            aria-labelledby={`use-case-${active.id}`}
-            aria-live="polite"
-          >
-            <div className="showcase__message" key={`${active.id}-message`}>
-              <span>You</span>
-              <p>{active.prompt}</p>
-            </div>
-            <div className="showcase__connector" aria-hidden="true">
-              <span>
-                <Message size={15} />
-              </span>
-              <i />
-              <span>
-                <Check size={15} />
-              </span>
-            </div>
-            <div className="showcase__result" key={`${active.id}-result`}>
-              <div className="showcase__result-icon">
-                <Calendar />
-              </div>
-              <div>
-                <span>DULIE ORGANIZED IT</span>
-                <h3>{active.title}</h3>
-                <p>{active.detail}</p>
-              </div>
-              <small>
-                <Check size={13} /> {active.response}
-              </small>
-            </div>
-          </div>
-        </div>
-
-        <div className="micro-features" data-reveal="up">
-          <article>
-            <strong>Ask what’s ahead</strong>
-            <p>“What do I have next week?”</p>
-          </article>
-          <article>
-            <Undo />
-            <strong>Mistake? Undo it.</strong>
-            <p>Reverse creates, edits, deletes, or a whole batch.</p>
-          </article>
-          <article>
-            <strong>Made for your timezone</strong>
-            <p>Set it using your city or an IANA timezone.</p>
-          </article>
         </div>
       </div>
     </section>

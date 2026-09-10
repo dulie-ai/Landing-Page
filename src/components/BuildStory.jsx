@@ -21,10 +21,10 @@ export function BuildStory() {
             <em>Serious inside.</em>
           </h2>
           <p>
-            Dulie is a full-stack system, not a scripted demo. A Go service
-            orchestrates language understanding, persistent storage, reminders,
-            recurring schedules, OAuth, and Google Calendar and Tasks sync
-            behind one quiet Telegram conversation.
+            A Go service turns each message into structured actions, validates
+            the details, and saves them in PostgreSQL. OpenAI handles language
+            understanding; OAuth connects your Google account. One conversation,
+            backed by a complete application.
           </p>
           <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
             Explore the source <ArrowRight size={17} />

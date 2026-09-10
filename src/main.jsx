@@ -5,6 +5,7 @@ import "@fontsource/dm-mono/latin-400.css";
 import "@fontsource/dm-mono/latin-500.css";
 import App from "./App.jsx";
 import "./styles.css";
+import "./editorial.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

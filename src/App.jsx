@@ -2,30 +2,18 @@ import { useEffect, useState } from "react";
 import { Brand, Mark } from "./components/Brand.jsx";
 import { BuildStory } from "./components/BuildStory.jsx";
 import { CommandDeck } from "./components/CommandDeck.jsx";
-import { Faq } from "./components/Faq.jsx";
-import { FeatureCard } from "./components/FeatureCard.jsx";
+import { CoreBenefits } from "./components/CoreBenefits.jsx";
 import { PageEffects } from "./components/PageEffects.jsx";
 import { PhoneDemo } from "./components/PhoneDemo.jsx";
 import { ProductShowcase } from "./components/ProductShowcase.jsx";
 import { siteConfig } from "./config.js";
-import { features } from "./content.js";
 import {
   ArrowRight,
   ArrowUpRight,
-  Bell,
-  Calendar,
   Check,
   Close,
   Menu,
-  Message,
-  Spark,
 } from "./components/Icons.jsx";
-
-const featureIcons = {
-  bell: <Bell />,
-  calendar: <Calendar />,
-  spark: <Spark />,
-};
 
 function Nav() {
   const [open, setOpen] = useState(false);
@@ -120,9 +108,8 @@ function App() {
                 <span>Keep them.</span>
               </h1>
               <p className="hero__lede">
-                Write it your way—a shortcut, a full sentence, or anything in
-                between. Dulie turns it into an event, reminder, task, or note
-                and follows up when it matters.
+                Your plans, tasks, reminders, and stray thoughts—all in one
+                Telegram chat. Send a message. Get on with your day.
               </p>
               <div className="hero__actions">
                 <a
@@ -142,8 +129,8 @@ function App() {
                   <Check size={16} />
                 </div>
                 <p>
-                  <strong>Four tools. One conversation.</strong>
-                  <span>Events · Reminders · Tasks · Notes</span>
+                  <strong>Already on Telegram? You’re ready.</strong>
+                  <span>No new app. Google connection optional.</span>
                 </p>
               </div>
             </div>
@@ -173,127 +160,24 @@ function App() {
           </div>
         </section>
 
-        <section className="steps section" id="how-it-works">
-          <div className="container">
-            <div className="section-heading" data-reveal="left">
-              <div>
-                <span className="kicker">HOW IT WORKS</span>
-                <h2>
-                  Planning that feels
-                  <br />
-                  like a conversation.
-                </h2>
-              </div>
-              <p>
-                Skip the forms and tiny date pickers. Tell Dulie what is
-                happening the same way you would tell a friend.
-              </p>
-            </div>
-
-            <div className="step-flow" data-reveal="up">
-              <div className="step" style={{ "--delay": "0ms" }}>
-                <span className="step__number">01</span>
-                <span className="step__icon">
-                  <Message />
-                </span>
-                <h3>Say it naturally</h3>
-                <p>
-                  Send what is on your mind. “Dentist Tuesday at three” is
-                  enough to get started.
-                </p>
-              </div>
-              <span className="step-flow__line" />
-              <div className="step" style={{ "--delay": "100ms" }}>
-                <span className="step__number">02</span>
-                <span className="step__icon">
-                  <Spark />
-                </span>
-                <h3>Dulie gets it</h3>
-                <p>
-                  Dulie organizes the details, offers a quick type picker when
-                  needed, and asks if anything important is missing.
-                </p>
-              </div>
-              <span className="step-flow__line" />
-              <div className="step" style={{ "--delay": "200ms" }}>
-                <span className="step__number">03</span>
-                <span className="step__icon">
-                  <Bell />
-                </span>
-                <h3>Stay on track</h3>
-                <p>
-                  Receive reminders and a morning brief in Telegram, or sync
-                  events and tasks with Google.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CoreBenefits />
 
         <ProductShowcase />
 
         <CommandDeck />
 
-        <section className="features section" id="features">
-          <div className="container">
-            <div data-reveal>
-              <span className="kicker kicker--light">
-                A SMALL BOT WITH A BIG MEMORY
-              </span>
-            </div>
-            <div className="features__title-row" data-reveal="left">
-              <h2>
-                Less organizing.
-                <br />
-                <em>More living.</em>
-              </h2>
-              <p>Thoughtful tools that quietly take care of the details.</p>
-            </div>
-            <div className="feature-grid" data-reveal="up">
-              {features.map(({ number, icon, title, description, tone }) => (
-                <FeatureCard
-                  number={number}
-                  icon={featureIcons[icon]}
-                  title={title}
-                  tone={tone}
-                  key={title}
-                >
-                  {description}
-                </FeatureCard>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <BuildStory />
-
-        <section className="manifesto section section-grid" id="about">
-          <div className="manifesto__orb" data-parallax="0.07" />
-          <div className="container manifesto__inner" data-reveal="scale">
-            <span className="kicker">THE IDEA</span>
-            <blockquote>
-              Your to-do list shouldn’t feel like <span>another task.</span>
-            </blockquote>
-            <p>
-              Dulie lives where your conversations already happen. There is no
-              new system to maintain—just a calmer way to capture what matters
-              before it slips away.
-            </p>
-            <a
-              className="button button--dark"
-              href={siteConfig.telegramUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Start a conversation <ArrowUpRight size={18} />
-            </a>
-          </div>
-        </section>
-
-        <Faq />
       </main>
 
       <footer>
+        <div className="container editorial-privacy" id="privacy">
+          <strong>Your data, in plain language.</strong>
+          <p>
+            Dulie stores your Telegram identifier, conversation context, and
+            saved items. Messages are processed with OpenAI to understand
+            requests. Google access is optional and used after you connect.
+          </p>
+        </div>
         <div className="container footer__top">
           <div className="footer__brand">
             <Mark size={48} />
