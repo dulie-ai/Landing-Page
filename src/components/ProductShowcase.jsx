@@ -86,7 +86,7 @@ export function ProductShowcase() {
           <article>
             <Undo />
             <strong>Mistake? Undo it.</strong>
-            <p>Reverse a create or delete for ten minutes.</p>
+            <p>Reverse creates, edits, deletes, or a whole batch.</p>
           </article>
           <article>
             <strong>Made for your timezone</strong>

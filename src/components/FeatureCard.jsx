@@ -8,15 +8,15 @@ export function FeatureCard({ number, icon, title, children, tone }) {
       <div className="feature-card__demo" aria-hidden="true">
         {tone === "violet" && (
           <>
-            <span className="demo-message">Dinner Friday at 7</span>
+            <span className="demo-message">Gym every Monday at 7</span>
             <span className="demo-token">EVENT</span>
-            <span className="demo-token">FRI · 7 PM</span>
+            <span className="demo-token">MON · WEEKLY</span>
           </>
         )}
         {tone === "lime" && (
           <>
-            <span className="demo-time">18:30</span>
-            <span className="demo-reminder">Reminder delivered</span>
+            <span className="demo-time">08:00</span>
+            <span className="demo-reminder">Morning brief delivered</span>
             <span className="demo-pulse" />
           </>
         )}
@@ -26,7 +26,7 @@ export function FeatureCard({ number, icon, title, children, tone }) {
               <b>18</b>SEP
             </span>
             <span className="demo-calendar-copy">
-              <b>Coffee with Maya</b>10:00–11:00 AM
+              <b>Calendar + Tasks</b>Create · Edit · Undo
             </span>
             <span className="demo-calendar-check">✓</span>
           </>

@@ -67,6 +67,17 @@ test("shows multiple phrasings for the same event", async ({ page }) => {
 
 test("shows every command category", async ({ page }) => {
   await page.goto("/");
+
+  await page.getByRole("tab", { name: "Repeat & batch" }).click();
+  await expect(
+    page.getByRole("tabpanel", { name: "Repeat & batch" }),
+  ).toContainText("event gym every mon 7-8pm");
+
+  await page.getByRole("tab", { name: "Edit & find" }).click();
+  await expect(
+    page.getByRole("tabpanel", { name: "Edit & find" }),
+  ).toContainText("reschedule event gym");
+
   await page.getByRole("tab", { name: "Settings" }).click();
 
   await expect(page.getByRole("tabpanel", { name: "Settings" })).toContainText(
@@ -75,6 +86,21 @@ test("shows every command category", async ({ page }) => {
   await expect(page.getByRole("tabpanel", { name: "Settings" })).toContainText(
     "/set_timezone Singapore",
   );
+});
+
+test("presents the development feature set", async ({ page }) => {
+  await page.goto("/");
+
+  await expect(page.locator(".capability-grid article")).toHaveCount(8);
+  await expect(
+    page.getByRole("heading", { name: "Color-coded automatically" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "An 8 AM morning brief" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Calendar and Tasks sync" }),
+  ).toBeVisible();
 });
 
 test("renders a level, visible marquee", async ({ page }) => {

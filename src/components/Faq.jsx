@@ -35,8 +35,8 @@ export function Faq() {
           <strong>A straightforward privacy note</strong>
           <p>
             Dulie stores your Telegram account identifier, recent conversation
-            context, and the items you ask it to remember. Google Calendar
-            access is optional and is used only after you connect it.
+            context, and the items you ask it to remember. Google Calendar and
+            Tasks access is optional and is used only after you connect it.
           </p>
         </div>
       </div>

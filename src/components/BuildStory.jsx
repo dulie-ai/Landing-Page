@@ -6,7 +6,7 @@ const stack = [
   "Go",
   "PostgreSQL",
   "OpenAI",
-  "Google Calendar",
+  "Google Calendar + Tasks",
 ];
 
 export function BuildStory() {
@@ -23,7 +23,8 @@ export function BuildStory() {
           <p>
             Dulie is a full-stack system, not a scripted demo. A Go service
             orchestrates language understanding, persistent storage, reminders,
-            OAuth, and calendar sync behind one quiet Telegram conversation.
+            recurring schedules, OAuth, and Google Calendar and Tasks sync
+            behind one quiet Telegram conversation.
           </p>
           <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
             Explore the source <ArrowRight size={17} />
@@ -73,8 +74,8 @@ export function BuildStory() {
               <small>Plans + context</small>
             </div>
             <div>
-              <strong>Google Calendar</strong>
-              <small>Optional sync</small>
+              <strong>Google Workspace</strong>
+              <small>Calendar + Tasks</small>
             </div>
           </div>
         </div>

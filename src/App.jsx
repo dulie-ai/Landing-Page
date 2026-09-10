@@ -121,7 +121,7 @@ function App() {
               </h1>
               <p className="hero__lede">
                 Write it your way—a shortcut, a full sentence, or anything in
-                between. Dulie turns it into an event, reminder, to-do, or note
+                between. Dulie turns it into an event, reminder, task, or note
                 and follows up when it matters.
               </p>
               <div className="hero__actions">
@@ -143,7 +143,7 @@ function App() {
                 </div>
                 <p>
                   <strong>Four tools. One conversation.</strong>
-                  <span>Events · Reminders · To-dos · Notes</span>
+                  <span>Events · Reminders · Tasks · Notes</span>
                 </p>
               </div>
             </div>
@@ -158,6 +158,10 @@ function App() {
                   <b>PLAN IT</b>
                   <i>✦</i>
                   <b>REMEMBER IT</b>
+                  <i>✦</i>
+                  <b>REPEAT IT</b>
+                  <i>✦</i>
+                  <b>CHANGE IT</b>
                   <i>✦</i>
                   <b>ASK IT</b>
                   <i>✦</i>
@@ -218,8 +222,8 @@ function App() {
                 </span>
                 <h3>Stay on track</h3>
                 <p>
-                  Review it in Telegram, receive reminders there, or sync events
-                  to Google Calendar.
+                  Receive reminders and a morning brief in Telegram, or sync
+                  events and tasks with Google.
                 </p>
               </div>
             </div>

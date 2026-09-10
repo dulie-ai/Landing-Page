@@ -112,14 +112,28 @@ export function CommandDeck() {
         </div>
         <div className="capability-grid" data-reveal="up">
           {detailedCapabilities.map(
-            ({ number, title, description, detail }) => (
+            ({ number, title, description, detail, tags, swatches }) => (
               <article key={number}>
-                <div>
+                <div className="capability-card__top">
                   <span>{number}</span>
                   <small>{detail}</small>
                 </div>
                 <h4>{title}</h4>
                 <p>{description}</p>
+                {tags && (
+                  <div className="capability-card__tags" aria-hidden="true">
+                    {tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                )}
+                {swatches && (
+                  <div className="capability-card__swatches" aria-hidden="true">
+                    {swatches.map((color) => (
+                      <span key={color} style={{ backgroundColor: color }} />
+                    ))}
+                  </div>
+                )}
               </article>
             ),
           )}
