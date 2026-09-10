@@ -58,11 +58,21 @@ test("switches between product examples", async ({ page }) => {
 
 test("shows multiple phrasings for the same event", async ({ page }) => {
   await page.goto("/");
-  const alternatives = page.locator(".phrase-list .phrase-example");
+  const alternatives = page.locator(".phrase-proof__examples code");
 
   await expect(alternatives).toHaveCount(3);
   await expect(alternatives.nth(0)).toContainText("event gym tmr 7-8");
   await expect(alternatives.nth(2)).toContainText("add an event for gym");
+});
+
+test("phone mockup shows a compact action history", async ({ page }) => {
+  await page.goto("/");
+  const phone = page.locator(".phone");
+
+  await expect(phone.locator(".chat-exchange")).toHaveCount(3);
+  await expect(phone).toContainText("task buy milk");
+  await expect(phone).toContainText("delete event gym");
+  await expect(phone).toContainText("Undo");
 });
 
 test("shows every command category", async ({ page }) => {

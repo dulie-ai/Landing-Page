@@ -30,53 +30,46 @@ export function PhoneDemo() {
         <div className="chat-body">
           <p className="chat-date">TODAY</p>
 
-          <div className="chat-flexibility">
-            <p className="chat-flexibility__label">
-              <span /> Same event, three ways
-            </p>
-            <div className="phrase-list">
-              <div className="bubble bubble--outgoing phrase-example">
+          <div className="chat-thread">
+            <div className="chat-exchange">
+              <div className="bubble bubble--outgoing">
                 <span className="bubble__text">event gym tmr 7-8</span>
+                <span className="bubble__meta">9:37 ✓✓</span>
+              </div>
+              <div className="bubble bubble--incoming">
+                <span className="bubble__text">
+                  Added <strong>Gym</strong> · tomorrow, 7–8 PM.
+                </span>
+                <span className="bubble__meta">9:37</span>
+              </div>
+            </div>
+
+            <div className="chat-exchange">
+              <div className="bubble bubble--outgoing">
+                <span className="bubble__text">task buy milk</span>
                 <span className="bubble__meta">9:38 ✓✓</span>
               </div>
-              <span className="phrase-or">or</span>
-              <div className="bubble bubble--outgoing phrase-example">
-                <span className="bubble__text">gym tmr 7 to 8 — event</span>
-                <span className="bubble__meta">9:39 ✓✓</span>
-              </div>
-              <span className="phrase-or">or</span>
-              <div className="bubble bubble--outgoing phrase-example">
+              <div className="bubble bubble--incoming">
                 <span className="bubble__text">
-                  add an event for gym tomorrow, 7pm for 1hr
+                  Task saved — <strong>Buy milk</strong>.
                 </span>
+                <span className="bubble__meta">9:38</span>
+              </div>
+            </div>
+
+            <div className="chat-exchange">
+              <div className="bubble bubble--outgoing">
+                <span className="bubble__text">delete event gym</span>
                 <span className="bubble__meta">9:40 ✓✓</span>
               </div>
+              <div className="bubble bubble--incoming">
+                <span className="bubble__text">
+                  Deleted <strong>Gym</strong>.
+                </span>
+                <span className="bubble__meta">9:40</span>
+              </div>
+              <div className="telegram-action">↩ Undo</div>
             </div>
-          </div>
-
-          <div className="same-result">
-            <span /> same result <span />
-          </div>
-
-          <div className="bubble bubble--incoming">
-            <span className="bubble__text">
-              Got it — <strong>Gym</strong>, tomorrow 7–8 PM.
-            </span>
-            <span className="bubble__meta">9:40</span>
-          </div>
-          <div className="event-card">
-            <div className="event-card__date">
-              <b>11</b>
-              <span>SEP</span>
-            </div>
-            <div className="event-card__copy">
-              <strong>Gym</strong>
-              <span>Tomorrow · 7:00–8:00 PM</span>
-              <small>
-                <Calendar size={13} /> Ready for your calendar
-              </small>
-            </div>
-            <span className="event-card__check">✓</span>
           </div>
         </div>
 
@@ -89,10 +82,10 @@ export function PhoneDemo() {
       </div>
 
       <div className="floating-note floating-note--top">
-        <span className="status-dot" /> Same plan. Any phrasing.
+        <span className="status-dot" /> Three actions. Zero forms.
       </div>
       <div className="floating-note floating-note--bottom">
-        <Calendar size={17} /> Calendar-ready
+        <Calendar size={17} /> Google synced
       </div>
     </div>
   );

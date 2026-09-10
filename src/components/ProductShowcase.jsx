@@ -20,6 +20,35 @@ export function ProductShowcase() {
           </p>
         </div>
 
+        <div className="phrase-proof" data-reveal="up">
+          <div className="phrase-proof__intro">
+            <span>ONE PLAN · YOUR WORDS</span>
+            <strong>Write it however it comes to mind.</strong>
+            <p>
+              Short, reordered, or fully written out—Dulie keeps the meaning.
+            </p>
+          </div>
+          <div
+            className="phrase-proof__examples"
+            aria-label="Three ways to describe the same event"
+          >
+            <code>
+              <i>01</i> event gym tmr 7-8
+            </code>
+            <code>
+              <i>02</i> gym tmr 7 to 8 — event
+            </code>
+            <code>
+              <i>03</i> add an event for gym tomorrow, 7pm for 1hr
+            </code>
+          </div>
+          <div className="phrase-proof__result">
+            <span>ALL BECOME</span>
+            <strong>Gym</strong>
+            <p>Tomorrow · 7–8 PM</p>
+          </div>
+        </div>
+
         <div className="showcase__stage" data-reveal="scale">
           <div
             className="showcase__tabs"
