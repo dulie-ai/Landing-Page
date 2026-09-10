@@ -30,24 +30,24 @@ export function PhoneDemo() {
         <div className="chat-body">
           <p className="chat-date">TODAY</p>
           <div className="bubble bubble--outgoing reveal-one">
-            Event: coffee with Maya next Friday, 10–11am
+            event gym tmr 7-8pm
             <span>9:40 ✓✓</span>
           </div>
           <div className="bubble bubble--incoming reveal-two">
             <span className="bubble__eyebrow">
               <Telegram size={13} /> Dulie
             </span>
-            I’ll keep that on your radar.
+            Done — event saved.
             <span>9:40</span>
           </div>
           <div className="event-card reveal-three">
             <div className="event-card__date">
-              <b>18</b>
+              <b>11</b>
               <span>SEP</span>
             </div>
             <div className="event-card__copy">
-              <strong>Coffee with Maya</strong>
-              <span>Friday · 10:00 AM</span>
+              <strong>Gym</strong>
+              <span>Tomorrow · 7:00–8:00 PM</span>
               <small>
                 <Calendar size={13} /> Ready for your calendar
               </small>

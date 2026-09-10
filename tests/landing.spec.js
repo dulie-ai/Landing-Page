@@ -13,7 +13,7 @@ test("renders the complete landing page", async ({ page }) => {
   await expect(
     page.getByLabel("Telegram conversation with Dulie"),
   ).toBeVisible();
-  await expect(page.locator("main section")).toHaveCount(7);
+  await expect(page.locator("main section")).toHaveCount(8);
   await expect(page.getByRole("contentinfo")).toBeAttached();
 });
 
@@ -51,7 +51,21 @@ test("has no serious accessibility violations", async ({ page }) => {
 test("switches between product examples", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("tab", { name: "Reminder" }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("Renew passport");
+  await expect(page.getByRole("tabpanel", { name: "Reminder" })).toContainText(
+    "Take meds",
+  );
+});
+
+test("shows every command category", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("tab", { name: "Settings" }).click();
+
+  await expect(page.getByRole("tabpanel", { name: "Settings" })).toContainText(
+    "/connect_google",
+  );
+  await expect(page.getByRole("tabpanel", { name: "Settings" })).toContainText(
+    "/set_timezone Singapore",
+  );
 });
 
 test("renders a level, visible marquee", async ({ page }) => {

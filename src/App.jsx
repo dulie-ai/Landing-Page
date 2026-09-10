@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Brand, Mark } from "./components/Brand.jsx";
 import { BuildStory } from "./components/BuildStory.jsx";
+import { CommandDeck } from "./components/CommandDeck.jsx";
 import { Faq } from "./components/Faq.jsx";
 import { FeatureCard } from "./components/FeatureCard.jsx";
 import { PageEffects } from "./components/PageEffects.jsx";
@@ -66,6 +67,9 @@ function Nav() {
           </a>
           <a href="#product" onClick={() => setOpen(false)}>
             See it in action
+          </a>
+          <a href="#commands" onClick={() => setOpen(false)}>
+            Quick guide
           </a>
           <a href="#build" onClick={() => setOpen(false)}>
             Under the hood
@@ -223,6 +227,8 @@ function App() {
         </section>
 
         <ProductShowcase />
+
+        <CommandDeck />
 
         <section className="features section" id="features">
           <div className="container">
