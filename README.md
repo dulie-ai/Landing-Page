@@ -7,7 +7,7 @@ The public landing page for Dulie, built with React and Vite.
 Install Node.js 22.12 or newer, then run:
 
 ```bash
-cd website
+cd Landing-Page
 npm install
 npm run dev
 ```
@@ -23,7 +23,7 @@ npm run build
 npm run preview
 ```
 
-The deployable output will be generated in `website/dist/`.
+The deployable output will be generated in `dist/`.
 
 ## Quality checks
 
