@@ -66,10 +66,7 @@
   color: #93acd2;
 }
 .chat-avatar {
-  background: #f4f8f5;
-}
-.chat-avatar .brand-mark {
-  border-radius: 50%;
+  background: transparent;
 }
 .chat-body {
   height: 446px;

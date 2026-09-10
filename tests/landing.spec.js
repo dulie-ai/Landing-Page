@@ -5,6 +5,9 @@ test("uses the new logo throughout the page", async ({ page }) => {
   await page.goto("/");
   const logos = page.locator(".brand-mark img");
   await expect(logos).toHaveCount(4);
+  for (const mark of await page.locator(".brand-mark, .chat-avatar").all()) {
+    await expect(mark).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  }
   for (const logo of await logos.all()) {
     await expect(logo).toHaveAttribute("src", /dulie-logo\.png$/);
     expect(
