@@ -29,18 +29,42 @@ export function PhoneDemo() {
 
         <div className="chat-body">
           <p className="chat-date">TODAY</p>
-          <div className="bubble bubble--outgoing reveal-one">
-            event gym tmr 7-8pm
-            <span>9:40 ✓✓</span>
+
+          <div className="chat-flexibility">
+            <p className="chat-flexibility__label">
+              <span /> Same event, three ways
+            </p>
+            <div className="phrase-list">
+              <div className="bubble bubble--outgoing phrase-example">
+                <span className="bubble__text">event gym tmr 7-8</span>
+                <span className="bubble__meta">9:38 ✓✓</span>
+              </div>
+              <span className="phrase-or">or</span>
+              <div className="bubble bubble--outgoing phrase-example">
+                <span className="bubble__text">gym tmr 7 to 8 — event</span>
+                <span className="bubble__meta">9:39 ✓✓</span>
+              </div>
+              <span className="phrase-or">or</span>
+              <div className="bubble bubble--outgoing phrase-example">
+                <span className="bubble__text">
+                  add an event for gym tomorrow, 7pm for 1hr
+                </span>
+                <span className="bubble__meta">9:40 ✓✓</span>
+              </div>
+            </div>
           </div>
-          <div className="bubble bubble--incoming reveal-two">
-            <span className="bubble__eyebrow">
-              <Telegram size={13} /> Dulie
+
+          <div className="same-result">
+            <span /> same result <span />
+          </div>
+
+          <div className="bubble bubble--incoming">
+            <span className="bubble__text">
+              Got it — <strong>Gym</strong>, tomorrow 7–8 PM.
             </span>
-            Done — event saved.
-            <span>9:40</span>
+            <span className="bubble__meta">9:40</span>
           </div>
-          <div className="event-card reveal-three">
+          <div className="event-card">
             <div className="event-card__date">
               <b>11</b>
               <span>SEP</span>
@@ -65,7 +89,7 @@ export function PhoneDemo() {
       </div>
 
       <div className="floating-note floating-note--top">
-        <span className="status-dot" /> Natural language understood
+        <span className="status-dot" /> Same plan. Any phrasing.
       </div>
       <div className="floating-note floating-note--bottom">
         <Calendar size={17} /> Calendar-ready

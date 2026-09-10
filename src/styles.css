@@ -503,7 +503,7 @@ div[id] {
 }
 .chat-body {
   height: 444px;
-  padding: 20px 12px;
+  padding: 13px 9px;
   background-color: #e7ebee;
   background-image:
     radial-gradient(
@@ -521,7 +521,7 @@ div[id] {
     42px 42px;
 }
 .chat-date {
-  margin: 0 0 21px;
+  margin: 0 0 10px;
   text-align: center;
   color: #95939a;
   font-family: "DM Mono";
@@ -529,49 +529,94 @@ div[id] {
   letter-spacing: 0.12em;
 }
 .bubble {
-  position: relative;
-  max-width: 84%;
-  margin-bottom: 13px;
-  padding: 12px 13px 20px;
-  border-radius: 16px;
-  font-size: 11px;
-  line-height: 1.5;
-  box-shadow: 0 6px 16px rgba(21, 21, 30, 0.07);
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  width: fit-content;
+  max-width: 94%;
+  padding: 6px 7px 5px 9px;
+  border-radius: 11px;
+  font-size: 10px;
+  line-height: 1.35;
+  box-shadow: 0 2px 5px rgba(21, 21, 30, 0.09);
 }
-.bubble > span:last-child {
-  position: absolute;
-  right: 9px;
-  bottom: 6px;
+.bubble__text {
+  min-width: 0;
+}
+.bubble__meta {
+  flex: none;
+  margin-bottom: -1px;
+  color: #66696c;
+  white-space: nowrap;
   font-size: 7px;
-  opacity: 0.5;
+  line-height: 1;
 }
 .bubble--outgoing {
   margin-left: auto;
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 3px;
   color: var(--ink);
   background: #dff7cc;
 }
+.bubble--outgoing .bubble__meta {
+  color: #416349;
+}
 .bubble--incoming {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 3px;
   background: #fff;
 }
-.bubble .bubble__eyebrow {
-  position: static;
+.chat-flexibility__label {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 5px;
-  color: #237ac4;
-  font-weight: 800;
-  font-size: 8px;
-  opacity: 1;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 0 3px 7px 0;
+  color: #6d6d73;
+  font-family: "DM Mono", monospace;
+  font-size: 6.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.chat-flexibility__label span {
+  width: 13px;
+  height: 1px;
+  background: #98999d;
+}
+.phrase-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.phrase-or {
+  margin: 2px 8px;
+  color: #85868a;
+  font-family: "DM Mono", monospace;
+  font-size: 6px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.same-result {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 11px 0 8px;
+  color: #8a8b90;
+  font-family: "DM Mono", monospace;
+  font-size: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.same-result span {
+  flex: 1;
+  height: 1px;
+  background: rgba(78, 79, 84, 0.17);
 }
 .event-card {
   display: flex;
   align-items: center;
   gap: 11px;
-  margin-top: 17px;
-  padding: 12px;
+  margin-top: 9px;
+  padding: 10px;
   border: 1px solid rgba(116, 85, 255, 0.15);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.83);
@@ -698,25 +743,6 @@ div[id] {
   border-radius: 50%;
   background: var(--lime);
   box-shadow: 0 0 11px var(--lime);
-}
-.reveal-one {
-  animation: floatIn 0.55s 0.05s both;
-}
-.reveal-two {
-  animation: floatIn 0.55s 0.28s both;
-}
-.reveal-three {
-  animation: floatIn 0.55s 0.52s both;
-}
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 .hero__marquee {
   position: absolute;

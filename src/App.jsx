@@ -120,9 +120,9 @@ function App() {
                 <span>Keep them.</span>
               </h1>
               <p className="hero__lede">
-                Turn a quick message into an event, reminder, to-do, or note.
-                Dulie understands the details, remembers them, and follows up
-                when it matters.
+                Write it your way—a shortcut, a full sentence, or anything in
+                between. Dulie turns it into an event, reminder, to-do, or note
+                and follows up when it matters.
               </p>
               <div className="hero__actions">
                 <a

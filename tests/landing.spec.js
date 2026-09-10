@@ -56,6 +56,15 @@ test("switches between product examples", async ({ page }) => {
   );
 });
 
+test("shows multiple phrasings for the same event", async ({ page }) => {
+  await page.goto("/");
+  const alternatives = page.locator(".phrase-list .phrase-example");
+
+  await expect(alternatives).toHaveCount(3);
+  await expect(alternatives.nth(0)).toContainText("event gym tmr 7-8");
+  await expect(alternatives.nth(2)).toContainText("add an event for gym");
+});
+
 test("shows every command category", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("tab", { name: "Settings" }).click();
