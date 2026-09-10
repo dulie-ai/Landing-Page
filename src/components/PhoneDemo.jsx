@@ -30,7 +30,7 @@ export function PhoneDemo() {
         <div className="chat-body">
           <p className="chat-date">TODAY</p>
           <div className="bubble bubble--outgoing reveal-one">
-            Coffee with Maya next Friday at 10am
+            Event: coffee with Maya next Friday, 10–11am
             <span>9:40 ✓✓</span>
           </div>
           <div className="bubble bubble--incoming reveal-two">

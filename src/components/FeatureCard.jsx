@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "./Icons.jsx";
-
 export function FeatureCard({ number, icon, title, children, tone }) {
   return (
     <article className={`feature-card feature-card--${tone}`}>
@@ -11,7 +9,6 @@ export function FeatureCard({ number, icon, title, children, tone }) {
         <h3>{title}</h3>
         <p>{children}</p>
       </div>
-      <ArrowUpRight className="feature-card__arrow" />
     </article>
   );
 }

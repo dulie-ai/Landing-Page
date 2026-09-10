@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity=".055"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#7455ff" stop-opacity=".52"/>
+      <stop offset="1" stop-color="#7455ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#08090d"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1030" cy="80" r="430" fill="url(#glow)"/>
+  <g transform="translate(74 65)">
+    <rect width="54" height="54" rx="16" fill="#d7ff63" transform="rotate(-7 27 27)"/>
+    <ellipse cx="27" cy="27" rx="13" ry="18" fill="none" stroke="#101014" stroke-width="3.5" transform="rotate(-38 27 27)"/>
+    <circle cx="27" cy="27" r="3.5" fill="#101014"/>
+    <text x="72" y="39" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="700">Dulie</text>
+  </g>
+  <text x="74" y="272" fill="#fff" font-family="Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-5">Make plans.</text>
+  <text x="74" y="358" fill="#a28dff" font-family="Georgia, serif" font-size="88" font-style="italic" letter-spacing="-4">Keep them.</text>
+  <text x="78" y="432" fill="#fff" fill-opacity=".63" font-family="Arial, sans-serif" font-size="24">Events, reminders, to-dos, and notes—</text>
+  <text x="78" y="467" fill="#fff" fill-opacity=".63" font-family="Arial, sans-serif" font-size="24">all from one Telegram conversation.</text>
+  <g transform="translate(866 170) rotate(4)">
+    <rect width="246" height="330" rx="44" fill="#f4f1ea" stroke="#fff" stroke-opacity=".4" stroke-width="7"/>
+    <rect x="83" y="12" width="80" height="19" rx="10" fill="#101014"/>
+    <rect x="25" y="72" width="196" height="72" rx="18" fill="#7455ff"/>
+    <rect x="42" y="91" width="140" height="7" rx="4" fill="#fff" fill-opacity=".9"/>
+    <rect x="42" y="108" width="106" height="6" rx="3" fill="#fff" fill-opacity=".55"/>
+    <rect x="25" y="160" width="196" height="105" rx="18" fill="#fff"/>
+    <rect x="43" y="180" width="42" height="42" rx="12" fill="#d7ff63"/>
+    <rect x="101" y="182" width="94" height="8" rx="4" fill="#101014"/>
+    <rect x="101" y="200" width="72" height="6" rx="3" fill="#101014" fill-opacity=".35"/>
+    <circle cx="198" cy="237" r="10" fill="#d7ff63"/>
+    <path d="m193 237 3 3 6-7" fill="none" stroke="#101014" stroke-width="2"/>
+    <rect x="65" y="306" width="116" height="5" rx="3" fill="#101014"/>
+  </g>
+  <rect x="0" y="610" width="1200" height="20" fill="#d7ff63"/>
+</svg>

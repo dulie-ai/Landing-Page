@@ -65,3 +65,23 @@ export const Close = (props) => (
     <path d="m6 6 12 12M18 6 6 18" />
   </Icon>
 );
+
+export const Check = (props) => (
+  <Icon {...props}>
+    <path d="m5 12 4 4L19 6" />
+  </Icon>
+);
+
+export const Undo = (props) => (
+  <Icon {...props}>
+    <path d="M9 7 5 11l4 4" />
+    <path d="M5 11h8a6 6 0 0 1 6 6v1" />
+  </Icon>
+);
+
+export const Lock = (props) => (
+  <Icon {...props}>
+    <rect x="4" y="10" width="16" height="11" rx="3" />
+    <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+  </Icon>
+);

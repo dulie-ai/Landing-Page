@@ -1,19 +1,30 @@
 import { useEffect, useState } from "react";
 import { Brand, Mark } from "./components/Brand.jsx";
+import { BuildStory } from "./components/BuildStory.jsx";
+import { Faq } from "./components/Faq.jsx";
 import { FeatureCard } from "./components/FeatureCard.jsx";
-import { PhoneDemo } from "./components/PhoneDemo.jsx";
 import { PageEffects } from "./components/PageEffects.jsx";
+import { PhoneDemo } from "./components/PhoneDemo.jsx";
+import { ProductShowcase } from "./components/ProductShowcase.jsx";
 import { siteConfig } from "./config.js";
+import { features } from "./content.js";
 import {
   ArrowRight,
   ArrowUpRight,
   Bell,
   Calendar,
+  Check,
   Close,
   Menu,
   Message,
   Spark,
 } from "./components/Icons.jsx";
+
+const featureIcons = {
+  bell: <Bell />,
+  calendar: <Calendar />,
+  spark: <Spark />,
+};
 
 function Nav() {
   const [open, setOpen] = useState(false);
@@ -32,6 +43,19 @@ function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.body.classList.toggle("menu-open", open);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.classList.remove("menu-open");
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
   return (
     <header className={`nav-shell ${scrolled ? "nav-shell--scrolled" : ""}`}>
       <nav className="nav container" aria-label="Main navigation">
@@ -40,11 +64,11 @@ function Nav() {
           <a href="#how-it-works" onClick={() => setOpen(false)}>
             How it works
           </a>
-          <a href="#features" onClick={() => setOpen(false)}>
-            Features
+          <a href="#product" onClick={() => setOpen(false)}>
+            See it in action
           </a>
-          <a href="#about" onClick={() => setOpen(false)}>
-            About
+          <a href="#build" onClick={() => setOpen(false)}>
+            Under the hood
           </a>
           <a
             className="button button--small"
@@ -85,15 +109,16 @@ function App() {
           <div className="container hero__inner">
             <div className="hero__copy">
               <div className="eyebrow">
-                <span /> Your day, finally in sync
+                <span /> Your memory, now on Telegram
               </div>
               <h1>
                 Make plans.
                 <span>Keep them.</span>
               </h1>
               <p className="hero__lede">
-                Dulie turns everyday messages into organized plans, timely
-                reminders, and calendar events—without another app to manage.
+                Turn a quick message into an event, reminder, to-do, or note.
+                Dulie understands the details, remembers them, and follows up
+                when it matters.
               </p>
               <div className="hero__actions">
                 <a
@@ -109,14 +134,12 @@ function App() {
                 </a>
               </div>
               <div className="hero__proof">
-                <div className="avatar-stack" aria-hidden="true">
-                  <span>J</span>
-                  <span>M</span>
-                  <span>A</span>
+                <div className="proof-icon" aria-hidden="true">
+                  <Check size={16} />
                 </div>
                 <p>
-                  <strong>Built for real life</strong>
-                  <span>No forms. No friction. Just text.</span>
+                  <strong>Four tools. One conversation.</strong>
+                  <span>Events · Reminders · To-dos · Notes</span>
                 </p>
               </div>
             </div>
@@ -152,8 +175,8 @@ function App() {
                 </h2>
               </div>
               <p>
-                Skip the menus, forms, and fiddly date pickers. Tell Dulie
-                what’s happening the same way you’d tell a friend.
+                Skip the forms and tiny date pickers. Tell Dulie what is
+                happening the same way you would tell a friend.
               </p>
             </div>
 
@@ -165,8 +188,8 @@ function App() {
                 </span>
                 <h3>Say it naturally</h3>
                 <p>
-                  Send a quick message. Short, messy, and human is perfectly
-                  fine.
+                  Send what is on your mind. “Dentist Tuesday at three” is
+                  enough to get started.
                 </p>
               </div>
               <span className="step-flow__line" />
@@ -177,8 +200,8 @@ function App() {
                 </span>
                 <h3>Dulie gets it</h3>
                 <p>
-                  Dates, times, and intent are understood and shaped into a
-                  clear plan.
+                  Dulie organizes the details, offers a quick type picker when
+                  needed, and asks if anything important is missing.
                 </p>
               </div>
               <span className="step-flow__line" />
@@ -189,13 +212,15 @@ function App() {
                 </span>
                 <h3>Stay on track</h3>
                 <p>
-                  Get the reminder you need, right where the conversation
-                  started.
+                  Review it in Telegram, receive reminders there, or sync events
+                  to Google Calendar.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
+        <ProductShowcase />
 
         <section className="features section" id="features">
           <div className="container">
@@ -213,36 +238,22 @@ function App() {
               <p>Thoughtful tools that quietly take care of the details.</p>
             </div>
             <div className="feature-grid" data-reveal>
-              <FeatureCard
-                number="01"
-                icon={<Spark />}
-                title="Understands you"
-                tone="violet"
-              >
-                Speak naturally. Dulie finds the plan inside your message
-                without rigid commands.
-              </FeatureCard>
-              <FeatureCard
-                number="02"
-                icon={<Bell />}
-                title="Reminds you"
-                tone="lime"
-              >
-                Timely nudges arrive in Telegram, so important moments don’t
-                drift away.
-              </FeatureCard>
-              <FeatureCard
-                number="03"
-                icon={<Calendar />}
-                title="Fits your calendar"
-                tone="cream"
-              >
-                Turn conversations into structured events and keep your day
-                connected.
-              </FeatureCard>
+              {features.map(({ number, icon, title, description, tone }) => (
+                <FeatureCard
+                  number={number}
+                  icon={featureIcons[icon]}
+                  title={title}
+                  tone={tone}
+                  key={title}
+                >
+                  {description}
+                </FeatureCard>
+              ))}
             </div>
           </div>
         </section>
+
+        <BuildStory />
 
         <section className="manifesto section section-grid" id="about">
           <div className="manifesto__orb" />
@@ -252,8 +263,9 @@ function App() {
               Your to-do list shouldn’t feel like <span>another task.</span>
             </blockquote>
             <p>
-              Dulie lives where conversations already happen. No new habit to
-              learn—just a calmer way to remember what matters.
+              Dulie lives where your conversations already happen. There is no
+              new system to maintain—just a calmer way to capture what matters
+              before it slips away.
             </p>
             <a
               className="button button--dark"
@@ -265,6 +277,8 @@ function App() {
             </a>
           </div>
         </section>
+
+        <Faq />
       </main>
 
       <footer>
@@ -278,7 +292,7 @@ function App() {
             </h2>
           </div>
           <div className="footer__action">
-            <p>Your plans are one message away.</p>
+            <p>Send the message. Dulie will take it from there.</p>
             <a href={siteConfig.telegramUrl} target="_blank" rel="noreferrer">
               Open Telegram <ArrowUpRight />
             </a>
@@ -288,12 +302,7 @@ function App() {
           <Brand />
           <span>© {new Date().getFullYear()} Dulie</span>
           <div>
-            <span
-              className="footer__placeholder"
-              title="Add a privacy page before launch"
-            >
-              Privacy
-            </span>
+            <a href="#privacy">Privacy</a>
             <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
               GitHub
             </a>

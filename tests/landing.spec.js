@@ -13,7 +13,7 @@ test("renders the complete landing page", async ({ page }) => {
   await expect(
     page.getByLabel("Preview of a conversation with Dulie"),
   ).toBeVisible();
-  await expect(page.locator("main section")).toHaveCount(4);
+  await expect(page.locator("main section")).toHaveCount(7);
   await expect(page.getByRole("contentinfo")).toBeAttached();
 });
 
@@ -46,4 +46,26 @@ test("has no serious accessibility violations", async ({ page }) => {
     ["serious", "critical"].includes(impact),
   );
   expect(seriousViolations).toEqual([]);
+});
+
+test("switches between product examples", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("tab", { name: "Reminder" }).click();
+  await expect(page.getByRole("tabpanel")).toContainText("Renew passport");
+});
+
+test("opens and closes the mobile menu without scrolling the page", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "Mobile navigation behavior");
+  await page.goto("/");
+
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await expect(page.locator("body")).toHaveClass(/menu-open/);
+  await expect(
+    page.getByRole("link", { name: "See it in action" }),
+  ).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("body")).not.toHaveClass(/menu-open/);
 });
