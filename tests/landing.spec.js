@@ -1,6 +1,22 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
+test("uses the new logo throughout the page", async ({ page }) => {
+  await page.goto("/");
+  const logos = page.locator(".brand-mark img");
+  await expect(logos).toHaveCount(4);
+  for (const logo of await logos.all()) {
+    await expect(logo).toHaveAttribute("src", /dulie-logo\.png$/);
+    expect(
+      await logo.evaluate((image) => image.complete && image.naturalWidth > 0),
+    ).toBe(true);
+  }
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
+    "href",
+    /favicon\.png$/,
+  );
+});
+
 test("renders the complete landing page", async ({ page }) => {
   await page.goto("/");
 

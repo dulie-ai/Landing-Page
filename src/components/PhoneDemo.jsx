@@ -1,4 +1,5 @@
-import { Calendar, Telegram } from "./Icons.jsx";
+import { Calendar } from "./Icons.jsx";
+import { Mark } from "./Brand.jsx";
 
 export function PhoneDemo() {
   return (
@@ -22,7 +23,7 @@ export function PhoneDemo() {
         <div className="chat-head">
           <span className="chat-head__back">‹</span>
           <div className="chat-avatar">
-            <Telegram size={19} />
+            <Mark size={38} />
           </div>
           <div className="chat-head__identity">
             <strong>Dulie bot</strong>

@@ -12,9 +12,8 @@
   <rect width="1200" height="630" fill="url(#grid)"/>
   <circle cx="1030" cy="80" r="430" fill="url(#glow)"/>
   <g transform="translate(74 65)">
-    <rect width="54" height="54" rx="16" fill="#d7ff63" transform="rotate(-7 27 27)"/>
-    <ellipse cx="27" cy="27" rx="13" ry="18" fill="none" stroke="#101014" stroke-width="3.5" transform="rotate(-38 27 27)"/>
-    <circle cx="27" cy="27" r="3.5" fill="#101014"/>
+    <rect width="54" height="54" rx="15" fill="#f4f8f5"/>
+    <image width="54" height="54" href="dulie-logo.png"/>
     <text x="72" y="39" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="700">Dulie</text>
   </g>
   <text x="74" y="272" fill="#fff" font-family="Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-5">Make plans.</text>

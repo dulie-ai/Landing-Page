@@ -173,29 +173,16 @@ div[id] {
   position: relative;
   display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
+  border-radius: 28%;
+  background: #f4f8f5;
+  overflow: hidden;
 }
-.brand-mark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: var(--lime);
-  transform: rotate(-7deg);
-}
-.brand-mark__orbit {
-  position: absolute;
-  width: 56%;
-  height: 56%;
-  border: 1.6px solid var(--ink);
-  border-radius: 50%;
-  transform: rotate(-40deg);
-}
-.brand-mark__core {
-  width: 6px;
-  height: 6px;
-  background: var(--ink);
-  border-radius: 50%;
-  z-index: 1;
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .nav__links {
   display: flex;

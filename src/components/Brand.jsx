@@ -5,8 +5,7 @@ export function Mark({ size = 36 }) {
       style={{ "--mark-size": `${size}px` }}
       aria-hidden="true"
     >
-      <span className="brand-mark__orbit" />
-      <span className="brand-mark__core" />
+      <img src={`${import.meta.env.BASE_URL}dulie-logo.png`} alt="" />
     </span>
   );
 }
