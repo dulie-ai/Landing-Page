@@ -104,8 +104,8 @@ function App() {
       <main id="main-content">
         <section className="hero section-grid">
           <div className="hero__noise" />
-          <div className="hero__orb hero__orb--one" />
-          <div className="hero__orb hero__orb--two" />
+          <div className="hero__orb hero__orb--one" data-parallax="0.08" />
+          <div className="hero__orb hero__orb--two" data-parallax="-0.05" />
           <div className="container hero__inner">
             <div className="hero__copy">
               <div className="eyebrow">
@@ -147,25 +147,27 @@ function App() {
           </div>
           <div className="hero__marquee" aria-hidden="true">
             <div>
-              <span>TEXT IT</span>
-              <i>✦</i>
-              <span>PLAN IT</span>
-              <i>✦</i>
-              <span>REMEMBER IT</span>
-              <i>✦</i>
-              <span>TEXT IT</span>
-              <i>✦</i>
-              <span>PLAN IT</span>
-              <i>✦</i>
-              <span>REMEMBER IT</span>
-              <i>✦</i>
+              {[0, 1].map((group) => (
+                <span className="marquee__group" key={group}>
+                  <b>TEXT IT</b>
+                  <i>✦</i>
+                  <b>PLAN IT</b>
+                  <i>✦</i>
+                  <b>REMEMBER IT</b>
+                  <i>✦</i>
+                  <b>ASK IT</b>
+                  <i>✦</i>
+                  <b>UNDO IT</b>
+                  <i>✦</i>
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
         <section className="steps section" id="how-it-works">
           <div className="container">
-            <div className="section-heading" data-reveal>
+            <div className="section-heading" data-reveal="left">
               <div>
                 <span className="kicker">HOW IT WORKS</span>
                 <h2>
@@ -180,7 +182,7 @@ function App() {
               </p>
             </div>
 
-            <div className="step-flow" data-reveal>
+            <div className="step-flow" data-reveal="up">
               <div className="step" style={{ "--delay": "0ms" }}>
                 <span className="step__number">01</span>
                 <span className="step__icon">
@@ -229,7 +231,7 @@ function App() {
                 A SMALL BOT WITH A BIG MEMORY
               </span>
             </div>
-            <div className="features__title-row" data-reveal>
+            <div className="features__title-row" data-reveal="left">
               <h2>
                 Less organizing.
                 <br />
@@ -237,7 +239,7 @@ function App() {
               </h2>
               <p>Thoughtful tools that quietly take care of the details.</p>
             </div>
-            <div className="feature-grid" data-reveal>
+            <div className="feature-grid" data-reveal="up">
               {features.map(({ number, icon, title, description, tone }) => (
                 <FeatureCard
                   number={number}
@@ -256,8 +258,8 @@ function App() {
         <BuildStory />
 
         <section className="manifesto section section-grid" id="about">
-          <div className="manifesto__orb" />
-          <div className="container manifesto__inner" data-reveal>
+          <div className="manifesto__orb" data-parallax="0.07" />
+          <div className="container manifesto__inner" data-reveal="scale">
             <span className="kicker">THE IDEA</span>
             <blockquote>
               Your to-do list shouldn’t feel like <span>another task.</span>

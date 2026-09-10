@@ -13,7 +13,7 @@ export function BuildStory() {
   return (
     <section className="build-story section" id="build">
       <div className="container build-story__grid">
-        <div className="build-story__copy" data-reveal>
+        <div className="build-story__copy" data-reveal="left">
           <span className="kicker kicker--light">UNDER THE HOOD</span>
           <h2>
             Simple outside.
@@ -32,7 +32,7 @@ export function BuildStory() {
 
         <div
           className="architecture"
-          data-reveal
+          data-reveal="right"
           aria-label="Dulie system architecture"
         >
           <div className="architecture__label">A MESSAGE THROUGH DULIE</div>

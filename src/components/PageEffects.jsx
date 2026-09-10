@@ -8,6 +8,7 @@ export function PageEffects() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const revealItems = [...document.querySelectorAll("[data-reveal]")];
+    const parallaxItems = [...document.querySelectorAll("[data-parallax]")];
     let observer;
 
     if (reducedMotion || !("IntersectionObserver" in window)) {
@@ -36,6 +37,19 @@ export function PageEffects() {
         setProgress(
           scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0,
         );
+
+        parallaxItems.forEach((item) => {
+          if (reducedMotion) {
+            item.style.setProperty("--parallax-offset", "0px");
+            return;
+          }
+          const rect = item.getBoundingClientRect();
+          const speed = Number(item.dataset.parallax) || 0;
+          const distance =
+            window.innerHeight / 2 - (rect.top + rect.height / 2);
+          const offset = Math.max(-90, Math.min(90, distance * speed));
+          item.style.setProperty("--parallax-offset", `${offset}px`);
+        });
       });
     };
 
@@ -46,6 +60,9 @@ export function PageEffects() {
     return () => {
       observer?.disconnect();
       cancelAnimationFrame(frame);
+      parallaxItems.forEach((item) =>
+        item.style.removeProperty("--parallax-offset"),
+      );
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
     };

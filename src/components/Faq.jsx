@@ -5,7 +5,7 @@ export function Faq() {
   return (
     <section className="faq section" id="faq">
       <div className="container faq__grid">
-        <div className="faq__intro" data-reveal>
+        <div className="faq__intro" data-reveal="left">
           <span className="kicker">GOOD TO KNOW</span>
           <h2>
             Questions,
@@ -14,7 +14,7 @@ export function Faq() {
           </h2>
           <p>No jargon. Just the useful details before you start.</p>
         </div>
-        <div className="faq__list" data-reveal>
+        <div className="faq__list" data-reveal="right">
           {faqs.map(({ question, answer }, index) => (
             <details key={question} open={index === 0}>
               <summary>

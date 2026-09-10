@@ -9,7 +9,7 @@ export function ProductShowcase() {
   return (
     <section className="showcase section" id="product">
       <div className="container">
-        <div className="showcase__heading" data-reveal>
+        <div className="showcase__heading" data-reveal="left">
           <div>
             <span className="kicker">ONE CHAT, FOUR WAYS TO REMEMBER</span>
             <h2>Whatever it is, just say it.</h2>
@@ -20,7 +20,7 @@ export function ProductShowcase() {
           </p>
         </div>
 
-        <div className="showcase__stage" data-reveal>
+        <div className="showcase__stage" data-reveal="scale">
           <div
             className="showcase__tabs"
             role="tablist"
@@ -78,7 +78,7 @@ export function ProductShowcase() {
           </div>
         </div>
 
-        <div className="micro-features" data-reveal>
+        <div className="micro-features" data-reveal="up">
           <article>
             <strong>Ask what’s ahead</strong>
             <p>“What do I have next week?”</p>

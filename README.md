@@ -33,10 +33,6 @@ npm run check
 
 This runs linting, formatting validation, a production build, and Playwright checks at desktop and mobile sizes.
 
-## Configuration
-
-Copy `.env.example` to `.env.local` and replace the placeholder values. Vite only exposes variables prefixed with `VITE_` to browser code.
-
 ## Before publishing
 
-Configure the real Telegram and GitHub URLs in `.env.local`. The marketing copy, privacy page, social preview image, testimonials, analytics, and final launch metadata should be completed once the final content and domain are decided.
+The Telegram and GitHub destinations are kept together in `src/config.js`. Update that file if either public URL changes. A full privacy policy, analytics, and final canonical-domain metadata can be added once the deployment domain is decided.

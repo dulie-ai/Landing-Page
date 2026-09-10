@@ -1,13 +1,14 @@
-import { Calendar, Spark } from "./Icons.jsx";
+import { Calendar, Telegram } from "./Icons.jsx";
 
 export function PhoneDemo() {
   return (
     <div
       className="demo-wrap"
-      aria-label="Preview of a conversation with Dulie"
+      role="img"
+      aria-label="Telegram conversation with Dulie"
     >
-      <div className="demo-glow" />
-      <div className="phone">
+      <div className="demo-glow" data-parallax="-0.04" />
+      <div className="phone" data-parallax="-0.018" aria-hidden="true">
         <div className="phone__topbar">
           <span className="phone__time">9:41</span>
           <span className="phone__island" />
@@ -15,16 +16,15 @@ export function PhoneDemo() {
         </div>
 
         <div className="chat-head">
+          <span className="chat-head__back">‹</span>
           <div className="chat-avatar">
-            <Spark size={19} />
+            <Telegram size={19} />
           </div>
-          <div>
-            <strong>Dulie</strong>
-            <span>online</span>
+          <div className="chat-head__identity">
+            <strong>Dulie bot</strong>
+            <span>bot</span>
           </div>
-          <button className="chat-more" type="button" aria-label="More options">
-            •••
-          </button>
+          <span className="chat-more">•••</span>
         </div>
 
         <div className="chat-body">
@@ -35,7 +35,7 @@ export function PhoneDemo() {
           </div>
           <div className="bubble bubble--incoming reveal-two">
             <span className="bubble__eyebrow">
-              <Spark size={13} /> Got it
+              <Telegram size={13} /> Dulie
             </span>
             I’ll keep that on your radar.
             <span>9:40</span>
@@ -57,10 +57,9 @@ export function PhoneDemo() {
         </div>
 
         <div className="chat-input">
+          <span className="chat-input__attach">＋</span>
           <span>Message</span>
-          <button type="button" aria-label="Send message">
-            ↑
-          </button>
+          <span className="chat-input__mic">●</span>
         </div>
         <span className="phone__home" />
       </div>
