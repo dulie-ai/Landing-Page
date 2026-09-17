@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf9f5"/>
+  <image href="dulie-logo.png" x="65" y="45" width="64" height="64"/>
+  <text x="140" y="89" font-family="Arial,sans-serif" font-size="32" font-weight="700" fill="#183b3d">Dulie</text>
+  <text x="78" y="235" font-family="Arial,sans-serif" font-size="76" font-weight="700" letter-spacing="-4" fill="#183b3d">Make plans.</text>
+  <text x="78" y="325" font-family="Georgia,serif" font-size="84" font-style="italic" letter-spacing="-4" fill="#005661">Keep them.</text>
+  <text x="82" y="402" font-family="Arial,sans-serif" font-size="23" fill="#526565">A working Telegram prototype today.</text>
+  <text x="82" y="439" font-family="Arial,sans-serif" font-size="23" fill="#526565">Adaptive planning in development.</text>
+  <rect x="770" y="80" width="350" height="465" rx="16" fill="#e4ede6"/>
+  <text x="798" y="125" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" fill="#005661">A LOOK AT WHAT’S NEXT</text>
+  <text x="798" y="175" font-family="Georgia,serif" font-size="31" font-style="italic" fill="#183b3d">Room for real life.</text>
+  <rect x="798" y="205" width="294" height="76" rx="6" fill="#fbfcf8"/>
+  <text x="815" y="231" font-family="Arial,sans-serif" font-size="11" fill="#526565">TUESDAY · 10–12</text>
+  <text x="815" y="258" font-family="Arial,sans-serif" font-size="18" fill="#183b3d">Write project descriptions</text>
+  <path d="M945 293v28m-7-7 7 7 7-7" stroke="#688f79" fill="none" stroke-width="2"/>
+  <rect x="798" y="335" width="294" height="89" rx="6" fill="#d0e2d3" stroke="#668e75" stroke-dasharray="4 4"/>
+  <text x="815" y="362" font-family="Arial,sans-serif" font-size="11" fill="#526565">THURSDAY · 3–4 · PROPOSED</text>
+  <text x="815" y="392" font-family="Arial,sans-serif" font-size="18" fill="#183b3d">An extra hour. A small change.</text>
+  <text x="815" y="472" font-family="Arial,sans-serif" font-size="15" fill="#183b3d">Evenings stay yours.</text>
+  <text x="82" y="555" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#005661">DULIE · THE NEXT CHAPTER</text>
+</svg>
