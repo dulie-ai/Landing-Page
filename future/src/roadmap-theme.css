@@ -1,0 +1,121 @@
+/* Extend the current site; only the added roadmap has scoped styles. */
+.future-page .nav-shell--scrolled {
+  background: #0c0d11;
+  transition: none;
+}
+.future-roadmap {
+  background: #0c0d11;
+  color: #f4f2ed;
+  --paper: #0c0d11;
+  --ink: #f4f2ed;
+  --muted: #bebcc8;
+  --teal: #b6a0ff;
+  --line: #ffffff24;
+}
+.future-roadmap .container {
+  width: min(1180px, calc(100% - 64px));
+}
+.future-roadmap h2 {
+  font-weight: 700;
+}
+.future-roadmap .direction {
+  background: #18151f;
+  border-top: 1px solid #ffffff1a;
+}
+.future-roadmap .direction em {
+  color: #b6a0ff;
+}
+.future-roadmap .status--dark {
+  border-color: #b6a0ff66;
+  color: #d7ff63;
+}
+.future-roadmap .direction-copy p {
+  color: #c8c3d2;
+}
+.future-roadmap .direction-copy strong {
+  color: #d7ff63;
+}
+.future-roadmap .planning-steps li {
+  border-color: #ffffff35;
+}
+.future-roadmap .preview {
+  background: #f3f0e8;
+  color: #19191d;
+  --ink: #19191d;
+  --muted: #5c5867;
+  --teal: #6546a3;
+  border-color: #d9d4df;
+}
+.future-roadmap .planner-demo {
+  background: #fffdf8;
+  border-color: #d6cfe1;
+  box-shadow: 0 20px 55px #2d213414;
+}
+.future-roadmap .planner-toolbar {
+  border-color: #ded8e7;
+}
+.future-roadmap .status--outline {
+  border-color: #9682b4;
+  color: #644386;
+}
+.future-roadmap .planner-conversation {
+  background: #eae5f2;
+  border-color: #d6cfe1;
+}
+.future-roadmap .preview-message--user {
+  background: #dbd0ed;
+}
+.future-roadmap .planner-identity .brand-mark img {
+  filter: none;
+}
+.future-roadmap .button {
+  background: #d7ff63;
+  color: #151719;
+  border-color: #d7ff63;
+  border-radius: 999px;
+}
+.future-roadmap .button:hover {
+  background: #c8f447;
+}
+.future-roadmap .calendar-slot {
+  color: #253b33;
+}
+.future-roadmap .slot--fixed {
+  color: #625b4e;
+}
+.future-roadmap .calendar-slot small {
+  color: inherit;
+}
+.future-roadmap .personal {
+  background: #101116;
+}
+.future-roadmap .control-note {
+  border-color: #a28dff;
+}
+.future-roadmap .canvaslink {
+  background: #1c1c26;
+  border-color: #ffffff24;
+}
+.future-roadmap .canvas-symbol {
+  color: #b6a0ff;
+}
+.future-roadmap .faq {
+  background: transparent;
+}
+.future-roadmap .faq-list details {
+  border-color: #ffffff24;
+}
+.future-roadmap .faq-list summary {
+  color: #f4f2ed;
+}
+.future-roadmap .faq-list details p {
+  color: #bebcc8;
+}
+.future-roadmap .text-button {
+  color: #583382;
+}
+@media (max-width: 540px) {
+  .future-roadmap .container {
+    width: calc(100% - 40px);
+  }
+}

@@ -12,10 +12,10 @@ test("separates the working product from proposed planning", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Make plans.Keep them.",
   );
-  await expect(page.locator(".hero-status")).toContainText(
-    "Adaptive planning is in development",
+  await expect(page.locator(".hero__proof")).toContainText(
+    "Adaptive planning in development",
   );
-  await expect(page.locator(".current-demo")).toContainText(
+  await expect(page.locator(".hero__proof")).toContainText(
     "Working Telegram prototype",
   );
   await expect(page.locator(".planner-toolbar")).toContainText(
@@ -29,7 +29,7 @@ test("separates the working product from proposed planning", async ({
       true,
     );
   }
-  await expect(page.locator(".hero-actions a").first()).toHaveAttribute(
+  await expect(page.locator(".hero__actions a").first()).toHaveAttribute(
     "href",
     "https://t.me/dulie_bot",
   );
@@ -93,23 +93,48 @@ test("keyboard users can open the FAQ and find policies", async ({ page }) => {
   await question.focus();
   await page.keyboard.press("Enter");
   await expect(page.getByText(/Progress would remain unknown/)).toBeVisible();
-  await page.getByRole("link", { name: "Privacy", exact: true }).click();
+  await page.getByRole("link", { name: "Privacy Policy", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Privacy Policy",
   );
   await page.goto("/future/");
-  await page.getByRole("link", { name: "Terms", exact: true }).click();
+  await page
+    .getByRole("link", { name: "Terms of Service", exact: true })
+    .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Terms of Service",
   );
 });
 
 test("keeps the original landing page separate", async ({ page }) => {
-  await page
-    .getByRole("link", { name: "Visit the current product page" })
-    .click();
+  await page.getByRole("link", { name: "Current product page" }).click();
   await expect(page.locator("main section")).toHaveCount(5);
   await expect(
     page.getByLabel("Telegram conversation with Dulie"),
   ).toBeVisible();
+});
+
+test("retains the original experience and current features", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.reload();
+  await expect(
+    page.getByLabel("Telegram conversation with Dulie"),
+  ).toBeVisible();
+  await expect(page.locator(".hero__marquee")).toBeVisible();
+  await expect(page.locator(".phrase-proof__examples code")).toHaveCount(3);
+  await expect(page.locator("#how-it-works")).toContainText("morning brief");
+  await expect(page.locator("#how-it-works")).toContainText("ten-minute Undo");
+  await page.getByRole("tab", { name: "Repeat & batch" }).click();
+  await expect(page.getByRole("tabpanel")).toContainText(
+    "event gym every mon 7-8pm",
+  );
+  await page.getByRole("tab", { name: "Edit & find" }).click();
+  await expect(page.getByRole("tabpanel")).toContainText(
+    "reschedule event gym",
+  );
+  await page.getByRole("tab", { name: "Settings" }).click();
+  await expect(page.getByRole("tabpanel")).toContainText("/connect_google");
+  await expect(page.locator("#build")).toBeAttached();
 });
