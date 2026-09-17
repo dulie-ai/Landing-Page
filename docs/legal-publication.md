@@ -1,6 +1,6 @@
 # Legal publication and production follow-up
 
-The public policies describe current local operation, effective 17 September 2026. Operator: Wang Rui Duan, Singapore. Contact: dulie.business@gmail.com, monitored by Rui Duan. The website remains on GitHub Pages; the bot/backend run manually on team computers. No production cloud host is asserted.
+The public policies describe current local operation, effective 17 September 2026. Operator: Rui Duan, Singapore. Contact: dulie.business@gmail.com, monitored by Rui Duan. The website remains on GitHub Pages; the bot/backend run manually on team computers. No production cloud host is asserted.
 
 Public paths: `/Landing-Page/privacy/` and `/Landing-Page/terms/`. Enter the HTTPS URLs in Google Auth Platform → Branding → App Domain after deployment. Saving URLs is not Google verification or permission to launch. Keep OAuth testing arrangements until the application is ready for the applicable verification and production requirements. Verify the website domain through Search Console as required.
 

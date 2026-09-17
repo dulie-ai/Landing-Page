@@ -202,7 +202,11 @@ function App() {
         </div>
         <div className="container footer__bottom">
           <Brand />
-          <span>© {new Date().getFullYear()} Dulie</span>
+          <span>
+            © {new Date().getFullYear()} Dulie
+            <br />
+            Built by Rui Duan &amp; Ke Mi
+          </span>
           <div>
             <a href="../">Current product page</a>
             <a href="../privacy/">Privacy Policy</a>
