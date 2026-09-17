@@ -198,7 +198,8 @@ function App() {
           <Brand />
           <span>© {new Date().getFullYear()} Dulie</span>
           <div>
-            <a href="#privacy">Privacy</a>
+            <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy Policy</a>
+            <a href={`${import.meta.env.BASE_URL}terms/`}>Terms of Service</a>
             <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
               GitHub
             </a>
