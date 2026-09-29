@@ -211,9 +211,6 @@ function App() {
             <a href="../">Current product page</a>
             <a href="../privacy/">Privacy Policy</a>
             <a href="../terms/">Terms of Service</a>
-            <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
           </div>
         </div>
       </footer>

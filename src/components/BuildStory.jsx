@@ -1,5 +1,4 @@
-import { ArrowRight, Check } from "./Icons.jsx";
-import { siteConfig } from "../config.js";
+import { Check } from "./Icons.jsx";
 
 const stack = [
   "Telegram Bot API",
@@ -26,9 +25,6 @@ export function BuildStory() {
             understanding; OAuth connects your Google account. One conversation,
             backed by a complete application.
           </p>
-          <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
-            Explore the source <ArrowRight size={17} />
-          </a>
         </div>
 
         <div

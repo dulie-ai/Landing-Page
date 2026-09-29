@@ -35,7 +35,7 @@ This runs linting, formatting validation, a production build, and Playwright che
 
 ## Before publishing
 
-The Telegram and GitHub destinations are kept together in `src/config.js`. Update that file if either public URL changes.
+The Telegram destination is configured in `src/config.js`. Update that file if the public bot URL changes.
 
 Legal pages live in `public/privacy/index.html` and `public/terms/index.html`, with shared styles in `public/legal.css`. They are ordinary HTML documents and work without JavaScript or a server routing rule. The homepage footer links to both and respects `VITE_BASE_PATH`.
 

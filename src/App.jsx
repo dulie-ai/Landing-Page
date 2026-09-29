@@ -204,9 +204,6 @@ function App() {
           <div>
             <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy Policy</a>
             <a href={`${import.meta.env.BASE_URL}terms/`}>Terms of Service</a>
-            <a href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
           </div>
         </div>
       </footer>
