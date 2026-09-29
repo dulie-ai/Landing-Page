@@ -2,7 +2,7 @@
 
 The public policies describe current local operation, effective 17 September 2026. Operator: Rui Duan, Singapore. Contact: dulie.business@gmail.com, monitored by Rui Duan. The website remains on GitHub Pages; the bot/backend run manually on team computers. No production cloud host is asserted.
 
-Public paths: `/Landing-Page/privacy/` and `/Landing-Page/terms/`. Enter the HTTPS URLs in Google Auth Platform → Branding → App Domain after deployment. Saving URLs is not Google verification or permission to launch. Keep OAuth testing arrangements until the application is ready for the applicable verification and production requirements. Verify the website domain through Search Console as required.
+Target public URLs after domain setup: `https://www.dulie.app/privacy/` and `https://www.dulie.app/terms/`. Complete [custom domain setup](custom-domain.md) first. Enter the HTTPS URLs in Google Auth Platform → Branding → App Domain after deployment. Saving URLs is not Google verification or permission to launch. Keep OAuth testing arrangements until the application is ready for the applicable verification and production requirements. Verify the website domain through Search Console as required.
 
 The public policies disclose archival deletion and manual handling of privacy requests. They contain no numerical retention or backup promises, no unverified encryption claims, and no arbitrary monetary liability cap. Terms use Singapore law/courts while preserving mandatory consumer rights. Publication does not establish enforceable assent or certify compliance.
 
