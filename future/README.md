@@ -1,6 +1,6 @@
 # Dulie — next-direction page
 
-Separate React/Vite entry point, published at **https://www.dulie.app/future/**.
+Separate React/Vite entry point, published at **https://site.dulie.app/future/**.
 The existing site remains at `/`; its source, legal pages and metadata are unchanged.
 
 Run from the repository root:

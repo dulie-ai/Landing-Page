@@ -43,4 +43,4 @@ Read [the legal publication guide](docs/legal-publication.md) before publishing 
 
 ## Custom domain
 
-The intended public address is `https://www.dulie.app/`. Follow [the domain setup guide](docs/custom-domain.md) to connect Cloudflare DNS, enable HTTPS, and verify ownership with Google. The deployment reads its base path from GitHub Pages settings, supporting both the existing project URL and the custom domain. After changing the Pages domain setting, rerun the deployment workflow.
+The intended public address is `https://site.dulie.app/`. Follow [the domain setup guide](docs/custom-domain.md) to connect Cloudflare DNS, enable HTTPS, and verify ownership with Google. The deployment reads its base path from GitHub Pages settings, supporting both the existing project URL and the custom domain. After changing the Pages domain setting, rerun the deployment workflow.

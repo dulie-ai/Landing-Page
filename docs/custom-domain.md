@@ -1,15 +1,15 @@
-# Connect www.dulie.app
+# Connect site.dulie.app
 
-Target URLs (not live until the account setup below is completed):
+Public website URLs:
 
-- Homepage: https://www.dulie.app/
-- Privacy: https://www.dulie.app/privacy/
-- Terms: https://www.dulie.app/terms/
-- Future preview: https://www.dulie.app/future/
+- Homepage: https://site.dulie.app/
+- Privacy: https://site.dulie.app/privacy/
+- Terms: https://site.dulie.app/terms/
+- Future preview: https://site.dulie.app/future/
 
 ## 1. GitHub
 
-Commit and push the prepared repository changes. In https://github.com/dulie-ai/Landing-Page/settings/pages keep GitHub Actions as the publishing source and save `www.dulie.app` as the custom domain. If available, first verify `dulie.app` in the organization's Pages settings using the TXT record GitHub provides.
+Commit and push the prepared repository changes. In https://github.com/dulie-ai/Landing-Page/settings/pages keep GitHub Actions as the publishing source and save `site.dulie.app` as the custom domain. If available, first verify `dulie.app` in the organization's Pages settings using the TXT record GitHub provides.
 
 This repository deploys with GitHub Actions: a CNAME file does not configure the domain. The Pages setting is required. The workflow reads `actions/configure-pages`'s base_path output, so assets and policy links work at either the old project path or the custom domain root.
 
@@ -17,23 +17,19 @@ After saving the custom domain, open Actions → Deploy GitHub Pages → Run wor
 
 ## 2. Cloudflare
 
-Open dulie.app → DNS → Records. Configure these website records, using DNS only (grey cloud) and Auto TTL:
+The active website uses only the `site` subdomain. In Cloudflare, dulie.app → DNS → Records has:
 
 | Type  | Name | Target             |
 | ----- | ---- | ------------------ |
-| CNAME | www  | dulie-ai.github.io |
-| A     | @    | 185.199.108.153    |
-| A     | @    | 185.199.109.153    |
-| A     | @    | 185.199.110.153    |
-| A     | @    | 185.199.111.153    |
+| CNAME | site | dulie-ai.github.io |
 
-The CNAME target has no https:// or /Landing-Page/ path. The @ records make dulie.app reach GitHub and redirect to the configured www domain. Check existing records for these same names before replacing conflicting website A/AAAA/CNAME records. Preserve email records and verification TXT records.
+Use DNS only (grey cloud) and Auto TTL. No root (`@`) A records or `www` record are needed for this setup. Preserve existing root-domain, email and verification records.
 
-DNS propagation and GitHub certificate provisioning can take up to 24 hours. Return to GitHub Pages and enable Enforce HTTPS once available. Check all target URLs and the redirect from https://dulie.app/. The final homepage address must remain https://www.dulie.app/.
+GitHub Pages must use `site.dulie.app` as its custom domain with Enforce HTTPS enabled. Check the homepage, privacy and terms URLs above after deployment.
 
 ## 3. Google ownership verification
 
-Using a Google account with Owner or Editor access to the OAuth Cloud project, open Google Search Console and add a Domain property for `dulie.app` (no https:// or www). Copy Google's TXT value into a Cloudflare TXT record with Name @. Keep the record after verification. Click Verify in Search Console.
+If you already have verified ownership of the `dulie.app` Domain property, keep that verification and do not create duplicate records. Confirm the verified Google account is an Owner or Editor of the OAuth Cloud project. Otherwise, using a Google account with Owner or Editor access to the OAuth Cloud project, open Google Search Console and add a Domain property for `dulie.app` (no https:// or www). Copy Google's TXT value into a Cloudflare TXT record with Name @. Keep the record after verification. Click Verify in Search Console.
 
 GitHub domain verification and Google Search Console verification are separate; completing one does not complete the other.
 
